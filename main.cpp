@@ -36,22 +36,20 @@ int main()
           << "you will enter the coefficients of the line Ax + By = C";
      cout << endl
           << endl;
-     cout << "Enter the coefficients for the 1st Line: ";
+     cout << "Enter the coefficients for the 1st Line: " << endl;
      for (int i = 0; i < 3; i++)
      {
           cout << letters[i] << ": ";
-          cin >> line1[0];
+          cin >> line1[i];
           cout << endl;
      }
 
-     cout << "Enter the coefficients for the 2nd Line [A,B,C]: ";
+     cout << "Enter the coefficients for the 2nd Line: " << endl;
      for (int i = 0; i < 3; i++)
      {
-
           cout << letters[i] << ": ";
-          cin >> line2[0];
-          cin >> line2[1];
-          cin >> line2[2];
+          cin >> line2[i];
+          cout << endl;
      }
 
      if ((-line1[0] / line1[1]) == (-line2[0] / line2[1]) && (line1[2] == line2[2]))
