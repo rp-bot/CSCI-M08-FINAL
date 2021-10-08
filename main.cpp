@@ -11,35 +11,55 @@
 
 using namespace std;
 
-void intersection(double A1, double B1, double C1, double A2, double B2, double C2)
+double intersection(
+    double A1, double B1, double C1, double A2, double B2, double C2,
+    double y, double x)
 {
+     double left, right;
+     left = ((C2 / B2) - (C1 / B1));
+     right = ((A1 / B1) + (A2 / B2));
+     x = (left / right);
+     y = ((C1 - (A1 * x)) / B1);
+     cout << endl
+          << "the point of intersection: (" << x << ", " << y << ")";
+     return 0;
 }
 
 int main()
 {
-    double line1[3], line2[3];
-    char comma;
-    cout << "______________Line Intersection Program______________" << endl;
-    cout << "you will enter the coefficients of the line Ax + By = C";
-    cout << endl
-         << endl
-         << "Enter the coefficients for the 1st Line [A,B,C]: ";
-    cin >> line1[0] >> comma >> line1[1] >> comma >> line1[2];
-    cout << endl
-         << "Enter the coefficients for the 2nd Line [A,B,C]: ";
-    cin >> line2[0] >> comma >> line2[1] >> comma >> line2[2];
+     double line1[3], line2[3], y, x;
+     char comma;
+     cout << "______________Line Intersection Program______________" << endl;
+     cout << endl
+          << "you will enter the coefficients of the line Ax + By = C";
+     cout << endl
+          << endl
+          << "Enter the coefficients for the 1st Line [A,B,C]: ";
+     cin >> line1[0];
+     cin >> line1[1];
+     cin >> line1[2];
+     cout << endl
+          << "Enter the coefficients for the 2nd Line [A,B,C]: ";
+     cin >> line2[0];
+     cin >> line2[1];
+     cin >> line2[2];
 
-    if ((-line1[0] / line1[1]) == (-line2[0] / line2[1]) && (line1[2] == line2[2]))
-    {
-        cout << endl
-             << "lines are the same";
-    }
-    else if ((-line1[0] / line1[1]) == (-line2[0] / line2[1]) && (line1[2] != line2[2]))
-    {
-        cout << endl
-             << "lines are parallell";
-    }
-    else
-    {
-    }
+     if ((-line1[0] / line1[1]) == (-line2[0] / line2[1]) && (line1[2] == line2[2]))
+     {
+          cout << endl
+               << "lines are the same";
+     }
+     else if ((-line1[0] / line1[1]) == (-line2[0] / line2[1]) && (line1[2] != line2[2]))
+     {
+          cout << endl
+               << "lines are parallell";
+     }
+     else
+     {
+          intersection(
+              line1[0], line1[1], line1[2], line2[0], line2[1], line2[2], y, x);
+     }
+
+     cout << endl
+          << endl;
 }
