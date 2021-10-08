@@ -16,12 +16,13 @@ double intersection(
     double y, double x)
 {
      double left, right;
-     left = ((C2 / B2) - (C1 / B1));
-     right = ((A1 / B1) + (A2 / B2));
-     x = (left / right);
+     left = (C2 / B2) - (C1 / B1);
+     right = (-A1 / B1) + (A2 / B2);
+     x = left / right;
      y = ((C1 - (A1 * x)) / B1);
      cout << endl
-          << "the point of intersection: (" << x << ", " << y << ")";
+          << "the point of intersection: ("
+          << fixed << setprecision(2) << x << ", " << y << ")";
      return 0;
 }
 
@@ -29,20 +30,27 @@ int main()
 {
      double line1[3], line2[3], y, x;
      char comma;
+     string letters[3] = {"A", "B", "C"};
      cout << "______________Line Intersection Program______________" << endl;
      cout << endl
           << "you will enter the coefficients of the line Ax + By = C";
      cout << endl
-          << endl
-          << "Enter the coefficients for the 1st Line [A,B,C]: ";
-     cin >> line1[0];
-     cin >> line1[1];
-     cin >> line1[2];
-     cout << endl
-          << "Enter the coefficients for the 2nd Line [A,B,C]: ";
-     cin >> line2[0];
-     cin >> line2[1];
-     cin >> line2[2];
+          << endl;
+     cout << "Enter the coefficients for the 1st Line: ";
+     for (int i = 0; i < 3; i++)
+     {
+          cout << letters[i] << ": ";
+          cin >> line1[0];
+          cout << endl;
+     }
+
+     // for (int i = 0; i < 3; i++)
+     // {
+     //      cout << "Enter the coefficients for the 2nd Line [A,B,C]: ";
+     //      cin >> line2[0];
+     //      cin >> line2[1];
+     //      cin >> line2[2];
+     // }
 
      if ((-line1[0] / line1[1]) == (-line2[0] / line2[1]) && (line1[2] == line2[2]))
      {
