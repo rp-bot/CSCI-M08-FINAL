@@ -11,7 +11,9 @@
 
 using namespace std;
 
-// double
+void intersection(double A1, double B1, double C1, double A2, double B2, double C2)
+{
+}
 
 int main()
 {
@@ -36,5 +38,8 @@ int main()
     {
         cout << endl
              << "lines are parallell";
+    }
+    else
+    {
     }
 }
