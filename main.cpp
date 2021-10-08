@@ -44,13 +44,15 @@ int main()
           cout << endl;
      }
 
-     // for (int i = 0; i < 3; i++)
-     // {
-     //      cout << "Enter the coefficients for the 2nd Line [A,B,C]: ";
-     //      cin >> line2[0];
-     //      cin >> line2[1];
-     //      cin >> line2[2];
-     // }
+     cout << "Enter the coefficients for the 2nd Line [A,B,C]: ";
+     for (int i = 0; i < 3; i++)
+     {
+
+          cout << letters[i] << ": ";
+          cin >> line2[0];
+          cin >> line2[1];
+          cin >> line2[2];
+     }
 
      if ((-line1[0] / line1[1]) == (-line2[0] / line2[1]) && (line1[2] == line2[2]))
      {
